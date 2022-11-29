@@ -19,11 +19,7 @@ galleryItems.map(element => {
 
 galleryList.addEventListener('click', (event) => {
     event.preventDefault();
-    const imageItem = event.target;
-    imageItem.setAttribute('src', imageItem.dataset.source);
-    const itemLink = event.target.parentNode;
-    const instance = basicLightbox.create(`
-    <div class="modal">${itemLink.innerHTML}</div>
-`)
+    let gallery = new SimpleLightbox('.gallery a');
+gallery.on('show.simplelightbox');
 instance.show()
 })
